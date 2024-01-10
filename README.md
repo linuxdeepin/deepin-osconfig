@@ -25,4 +25,4 @@ Any usage issues can ask for help via
 
 ## License
 
-deepin-osconfig is licensed under [GPL-3.0-or-later](LICENSE).
+deepin-osconfig is licensed under [LGPL-3.0-or-later？](LICENSE).

@@ -5,6 +5,7 @@ Maintainer: Deepin Sysdev <sysdev@deepin.com>
 Standards-Version: 4.5.1
 Build-Depends: debhelper-compat (= 12)
 
+# for test
 Package: deepin-osconfig
 Architecture: all
 Depends: ${misc:Depends}

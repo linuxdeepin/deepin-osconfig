@@ -5,6 +5,9 @@
         "filemanager.blackList": {
             "value": ["dfmplugin-vault"]
         },
+        "desktop.blackList": {
+            "value": []
+        },
         "server.blackList": {
             "value": ["serverplugin-vaultdaemon"]
         }

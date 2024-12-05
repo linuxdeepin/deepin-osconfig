@@ -3,13 +3,13 @@
     "version": "1.0",
     "contents": {
         "filemanager.blackList": {
-            "value": ["dfmplugin-vault"]
+            "value": ["dfmplugin-vault", "dfmplugin-encrypt-manager", "dfmplugin-disk-encrypt"]
         },
         "desktop.blackList": {
             "value": []
         },
-        "server.blackList": {
-            "value": ["serverplugin-vaultdaemon"]
+        "daemon.blackList": {
+            "value": ["daemonplugin-vaultdaemon"]
         }
     }
 }

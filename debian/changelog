@@ -1,3 +1,9 @@
+deepin-osconfig (2025.01.15) unstable; urgency=medium
+
+  * add postinst.
+
+ -- lichenggang <lichenggang@deepin.org>  Wed, 15 Jan 2025 17:33:34 +0800
+
 deepin-osconfig (2024.08.06) unstable; urgency=medium
 
   * Add compat DConfig item for launchpad DConfig migration

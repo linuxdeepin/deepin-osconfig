@@ -1,3 +1,9 @@
+deepin-osconfig (2025.02.24) unstable; urgency=medium
+
+  * feat: hide privacy on deepin
+
+ -- zhangkun <zhangkun2@uniontech.com>  Mon, 24 Feb 2025 19:04:21 +0800
+
 deepin-osconfig (2025.01.15) unstable; urgency=medium
 
   * add postinst.

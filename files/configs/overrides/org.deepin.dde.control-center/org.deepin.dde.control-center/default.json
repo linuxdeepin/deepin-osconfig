@@ -1,0 +1,11 @@
+{
+    "magic": "dsg.config.override",
+    "version": "1.0",
+    "contents": {
+    "hideModule": {
+      "value": ["privacy"],
+        "serial": 0,
+        "permission": "readonly"
+      }
+    }
+  }

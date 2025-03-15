@@ -1,3 +1,9 @@
+deepin-osconfig (2025.03.15) unstable; urgency=medium
+
+  * update changelog
+
+ -- lichenggang <lichenggang@deepin.org>  Sat, 15 Mar 2025 16:34:22 +0800
+
 deepin-osconfig (2025.01.15) unstable; urgency=medium
 
   * add postinst.

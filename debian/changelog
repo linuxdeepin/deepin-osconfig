@@ -1,3 +1,9 @@
+deepin-osconfig (2025.05.16) unstable; urgency=medium
+
+  * add update third party source
+
+ -- caixiangrong <caixiangrong@deepin.org>  Fri, 16 May 2025 16:34:22 +0800
+
 deepin-osconfig (2025.03.15) unstable; urgency=medium
 
   * update changelog

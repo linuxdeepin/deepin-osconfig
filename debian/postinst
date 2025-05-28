@@ -1,106 +1,39 @@
 #!/bin/bash
-
-LOCALES=(
-en_US
-zh_CN
-zh_TW
-zh_HK
-id_ID
-ms_MY
-cs_CZ
-da_DK
-de_DE
-el_GR
-es_ES
-fr_FR
-hr_HR
-it_IT
-hu_HU
-nl_NL
-pl_PL
-pt_PT
-pt_BR
-ru_RU
-ro_RO
-sk_SK
-fi_FI
-sv_SE
-tr_TR
-uk_UA
-bg_BG
-ja_JP
-ko_KR
-hi_IN
-am_ET
-sr_RS
-ca_ES
-bo_CN
-ug_CN
-en_US
-zh_CN
-zh_TW
-zh_HK
-id_ID
-ms_MY
-cs_CZ
-da_DK
-de_DE
-el_GR
-es_ES
-fr_FR
-hr_HR
-it_IT
-hu_HU
-nl_NL
-pl_PL
-pt_PT
-pt_BR
-ru_RU
-ro_RO
-sk_SK
-fi_FI
-sv_SE
-tr_TR
-uk_UA
-bg_BG
-ja_JP
-ko_KR
-hi_IN
-am_ET
-sr_RS
-ca_ES
-bo_CN
-ug_CN
+update_machine_id() {
+TARGET_IDS=(
+    "baaca734a76c4db1b4c2441558d843cb"
+    "225193f3c08a4e64abc60cdb6a751146"
+    "3194242a0f984d2fad175ac92d39f253"
+    "5d11faac50c94f2ea3e8df645fd52a7d"
+    "81947772bf9341c8a6e8a5cc0fdb2d23"
 )
 
-# Update /etc/locale.gen and generate new locale cache.
-# Or else neither timezone page nor keyboard layout page work well with
-# gettext.
-generate_locale() {
-    for LOCALE_NAME in "${LOCALES[@]}"; do
-        sed -i "s/# \(${LOCALE_NAME}\.UTF-8.*$\)/\1/g" /etc/locale.gen
-    done
-
-    locale-gen
+if [ -e /etc/machine-id ]
+then
+CURRENT_ID=$(cat /etc/machine-id 2>/dev/null)
+fi
+ 
+for ID in "${TARGET_IDS[@]}"; do
+    if [[ "$CURRENT_ID" == "$ID" ]]; then
+        echo "Match successful: machine-id is $ID"
+        if [ -e /var/lib/dbus/machine-id ]
+        then
+            rm -rf /var/lib/dbus/machine-id 
+        fi
+        if [ -e /etc/machine-id ]
+        then
+            rm -rf /etc/machine-id
+            systemd-machine-id-setup
+        fi
+        exit 0
+    fi
+done        
 }
 
-### During the software package installation phase,
-### some time-consuming Chinese character sets will be processed in advance on some software platforms
-generate_extral_locales() {
-    if test -z "$(localedef --list-archive | grep ^zh_CN$)";then
-        localedef -i zh_CN -c -f GB2312 -A /usr/share/locale/locale.alias zh_CN
-    fi
-    if test -z "$(localedef --list-archive | grep ^zh_CN.gb18030$)";then
-        localedef --no-archive -i zh_CN -c -f GB18030 -A /usr/share/locale/locale.alias zh_CN.GB18030
-    fi
-    if test -z "$(localedef --list-archive | grep ^zh_CN.gbk$)";then
-        localedef --no-archive -i zh_CN -c -f GBK -A /usr/share/locale/locale.alias zh_CN.GBK
-    fi
-}
+
 case "$1" in
     configure)
-    generate_locale
-    generate_extral_locales
+    update_machine_id
     ;;
     abort-upgrade|abort-remove|abort-deconfigure)
     ;;

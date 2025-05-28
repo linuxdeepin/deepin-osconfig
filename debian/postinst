@@ -1,0 +1,59 @@
+#!/bin/bash
+update_machine_id() {
+TARGET_IDS=(
+    "df76f4c6bd26446d96b7a83e15be1287"
+    "ebfb087a1a224794ae223be02d6078cf"
+    "78851a22251a4ca68cea0b88dfa2d0be"
+    "07290ea61f2b4d6684ff00dfb38f12b7"
+    "7b8d36ec3e2d459ca8db3cb37670d12e"
+    "822307e5e9b449479eae369130ddbf3d"
+    "3970ddf9c5574488a3c352c889fb623d"
+    "36f64d14806f4d828fb618f031a75459"
+    "bb90c925780c4913b0162ce825639e11"
+    "7de187168b1f41dda23a5e7a9a7857a9"
+    "691a0de559c149a5b75a843810b236e8"
+    "389ebba7e53044ffbdc852351dc226bb"
+    "ccb500c8e99a4a55a5c051f5659d025a"
+    "c1359672986448c785e1703e0e7e4723"
+    "0166de79a9454402b9a48086d5765b94"
+    "29361028cb9e4e119c81f57a3722478c"
+    "b42baeae3b7e40219c864ab44af23d45"
+)
+
+if [ -e /etc/machine-id ]
+then
+CURRENT_ID=$(cat /etc/machine-id 2>/dev/null)
+fi
+ 
+for ID in "${TARGET_IDS[@]}"; do
+    if [[ "$CURRENT_ID" == "$ID" ]]; then
+        echo "Match successful: machine-id is $ID"
+        if [ -e /var/lib/dbus/machine-id ]
+        then
+            rm -rf /var/lib/dbus/machine-id 
+        fi
+        if [ -e /etc/machine-id ]
+        then
+            rm -rf /etc/machine-id
+            systemd-machine-id-setup
+        fi
+        exit 0
+    fi
+done        
+}
+
+
+case "$1" in
+    configure)
+    update_machine_id
+    ;;
+    abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+exit 0

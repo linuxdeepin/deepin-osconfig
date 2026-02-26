@@ -1,3 +1,9 @@
+deepin-osconfig (2025.05.30) unstable; urgency=medium
+
+  * change update-mode/check-update-mode to 9 by default (system & unknown) for community
+
+ -- wangzhaohui <wangzhaohui@uniontech.com>  Thu, 26 Feb 2026 13:42:03 +0800
+
 deepin-osconfig (2025.05.29) unstable; urgency=medium
 
   * enable incremental update for community version

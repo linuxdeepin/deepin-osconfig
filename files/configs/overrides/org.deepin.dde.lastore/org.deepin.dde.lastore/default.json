@@ -2,8 +2,14 @@
   "magic": "dsg.config.override",
   "version": "1.0",
   "contents": {
-  "incremental-update": {
-    "value": true
+    "incremental-update": {
+      "value": true
+    },
+    "update-mode": {
+      "value": 9
+    },
+    "check-update-mode": {
+      "value": 9
     }
   }
 }

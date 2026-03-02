@@ -1,3 +1,9 @@
+deepin-osconfig (2025.05.31) unstable; urgency=medium
+
+  * add serial number for update-mode/check-update-mode to avoid cache interference.
+
+ -- wangzhaohui <wangzhaohui@uniontech.com>  Mon, 2 Mar 2026 13:42:20 +0800
+
 deepin-osconfig (2025.05.30) unstable; urgency=medium
 
   * change update-mode/check-update-mode to 9 by default (system & unknown) for community

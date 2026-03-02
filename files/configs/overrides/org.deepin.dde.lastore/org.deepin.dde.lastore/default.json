@@ -3,13 +3,16 @@
   "version": "1.0",
   "contents": {
     "incremental-update": {
-      "value": true
+      "value": true,
+      "serial": 1
     },
     "update-mode": {
-      "value": 9
+      "value": 9,
+      "serial": 1
     },
     "check-update-mode": {
-      "value": 9
+      "value": 9,
+      "serial": 1
     }
   }
 }

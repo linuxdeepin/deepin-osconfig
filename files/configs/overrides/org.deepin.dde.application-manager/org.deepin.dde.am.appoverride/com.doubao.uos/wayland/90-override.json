@@ -1,0 +1,10 @@
+{
+    "magic": "dsg.config.override",
+    "version": "1.0",
+    "contents": {
+        "Exec": {
+            "value": "!AM_FULL! --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime",
+            "permissions": "readwrite"
+        }
+    }
+}

@@ -9,7 +9,7 @@
             "value": []
         },
         "daemon.blackList": {
-            "value": ["daemonplugin-vaultdaemon"]
+            "value": ["dfmdaemon-vault-plugin"]
         }
     }
 }

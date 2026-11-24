@@ -1,3 +1,9 @@
+deepin-osconfig (2026.11.21) unstable; urgency=medium
+
+  * chore: disable UDF burn by default
+
+ -- Zhang Sheng <zhangsheng@uniontech.com>  Tue, 24 Nov 2026 14:05:19 +0800
+
 deepin-osconfig (2026.11.20) unstable; urgency=medium
 
   * fix: correct vault daemon plugin name for file manager

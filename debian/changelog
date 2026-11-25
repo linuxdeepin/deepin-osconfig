@@ -1,3 +1,12 @@
+deepin-osconfig (2026.11.22) unstable; urgency=medium
+
+  * fix: drop wayland overrides for apps that do not support native Wayland
+    - com.baidu.baidunetdisk: crashes on window creation in native Wayland
+    - cn.quark.quark-cloud-drive: Electron 8 ignores ozone wayland flags
+    - com.deepseek.uos: launcher does not forward appended arguments
+
+ -- liuheng <liuhenga@uniontech.com>  Wed, 25 Nov 2026 10:30:00 +0800
+
 deepin-osconfig (2026.11.21) unstable; urgency=medium
 
   * chore: disable UDF burn by default
